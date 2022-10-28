@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/alexey-5/pizza.git/static/css/main.18e1889a.css",
+    "main.js": "/alexey-5/pizza.git/static/js/main.05389daa.js",
+    "index.html": "/alexey-5/pizza.git/index.html",
+    "main.18e1889a.css.map": "/alexey-5/pizza.git/static/css/main.18e1889a.css.map",
+    "main.05389daa.js.map": "/alexey-5/pizza.git/static/js/main.05389daa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.18e1889a.css",
+    "static/js/main.05389daa.js"
+  ]
+}
