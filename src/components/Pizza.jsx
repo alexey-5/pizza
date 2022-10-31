@@ -26,7 +26,7 @@ function Pizza({ id,name, imageUrl, price, sizes, types }) {
   return (
     <div className="pizza_centr">
       <div className="pizza-block">
-        <Link to={`./pizza/${id}`}>
+        <Link to={`./p-uno/${id}`}>
         <img className="pizza-block__image" src={imageUrl} />
         </Link>
         <h4 className="pizza-block__title">{name}</h4>
