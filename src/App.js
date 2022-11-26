@@ -14,10 +14,10 @@ function App() {
         <Header />
         <div className="content">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/*" element={<Home />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/p-uno/:id" element={<PizzaMore/>} />
-            <Route path="*" element={<Notfound />} />
+            {/* <Route path="*" element={<Notfound />} /> */}
           </Routes>
         </div>
     </div>
