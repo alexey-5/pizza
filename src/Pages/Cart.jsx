@@ -161,7 +161,7 @@ function Cart() {
                   </div>
                 </div>
                 <div className="cart__item-price">
-                  <b>{elem.price} ₽</b>
+                  <b>{elem.price*elem.count} ₽</b>
                 </div>
                 <div className="cart__item-remove">
                   <div
