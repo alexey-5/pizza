@@ -1,6 +1,5 @@
-import { useCallback, useContext, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import style from "./Search.module.scss";
-import {appContext} from '../../App.js';
 import { useDispatch, useSelector } from "react-redux";
 import { setSearch } from "../../store/pizzaSlise";
 import debounce from 'lodash.debounce'

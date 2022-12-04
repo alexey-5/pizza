@@ -27,7 +27,7 @@ const PizzaMore = () => {
     fetchPizza();
   }, []);
   
-  if (!pizza) return " Загрузка....";
+  if (!pizza) return <>" Загрузка...."</>
   return (
     <div className="container">
       <img className="pizzamore_img" src={pizza.imageUrl}></img>

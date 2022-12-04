@@ -1,13 +1,11 @@
-import { createContext, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import PizzaMore from "./Pages/PizzaMore";
 import Cart from "./Pages/Cart";
 import Home from "./Pages/Home";
-import Notfound from "./Pages/Notfound";
 import "./scss/app.scss";
 
-function App() {
+const App: React.FC=()=>{
 
   return (
     <div className="wrapper">
