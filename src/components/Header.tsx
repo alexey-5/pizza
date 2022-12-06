@@ -2,11 +2,11 @@ import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import Search from "./Search";
-import logo from "../img/pizza-logo.svg";
+//import logo from "../img/pizza-logo.svg";
 
 function Header() {
   const { item, sum } = useSelector((state) => state.cart);
-  const countTotal = item.reduce((akk, elem) => elem.count + akk, 0);
+  const countTotal = item.reduce((akk: number, elem) => elem.count + akk, 0);
   const location = useLocation();
   const render1 = useRef(false);
 
@@ -23,7 +23,7 @@ function Header() {
       <div className="container">
         <Link to="/">
           <div className="header__logo">
-            <img width="38" src={logo} alt="Pizza logo" />
+            <img width="38" src={require("../img/pizza-logo.svg").default} alt="Pizza logo" />
             <div>
               <h1>React Pizza</h1>
               <p>самая вкусная пицца во вселенной</p>

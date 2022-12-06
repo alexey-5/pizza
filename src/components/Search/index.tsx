@@ -1,11 +1,11 @@
 import { useCallback, useRef, useState } from "react";
 import style from "./Search.module.scss";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { setSearch } from "../../store/pizzaSlise";
 import debounce from 'lodash.debounce'
 
 function Search() {
-  const [search2, setSearch2] = useState('')
+  const [search2, setSearch2] = useState<string>('')
   const inputRef = useRef();
   const dispatch = useDispatch();
   //const search = useSelector((state)=>state.pizza.search);

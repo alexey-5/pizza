@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import { addItem } from "../store/cartSlise";
 
 function Pizza({ id,name, imageUrl, price, sizes, types }) {
-  const [activeType, setActiveType] = useState(0);
-  const [activeSize, setActiveSize] = useState(sizes[0]);
+  const [activeType, setActiveType] = useState<number>(0);
+  const [activeSize, setActiveSize] = useState<number>(sizes[0]);
   const cartArr = useSelector((state)=>state.cart.item)//получаем массив пиц из корзины
   let countPizza = 0;
     const objPizza=cartArr.find((elem)=>elem.id===id);//ищем объект с этой пицей
@@ -27,7 +27,7 @@ function Pizza({ id,name, imageUrl, price, sizes, types }) {
     <div className="pizza_centr">
       <div className="pizza-block">
         <Link to={`./p-uno/${id}`}>
-        <img className="pizza-block__image" src={imageUrl} />
+        <img className="pizza-block__image" src={imageUrl}  alt="img" />
         </Link>
         <h4 className="pizza-block__title">{name}</h4>
         <div className="pizza-block__selector">

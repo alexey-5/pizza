@@ -1,13 +1,10 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import {useEffect} from "react";
 import Categories from "../components/Categories";
 import Skeleton from "../components/Skeleton";
 import Sort from "../components/Sort";
 import Pizza from "../components/Pizza";
-import { appContext } from "../App.js";
 import { useDispatch, useSelector } from "react-redux";
-import axios from 'axios'
 import { fetchPizza } from "../store/pizzaSlise";
-import sortSlise, { selectSort } from "../store/sortSlise";
 
 function Home() {
   //const { search } = useContext(appContext);
