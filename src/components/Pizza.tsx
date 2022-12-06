@@ -3,7 +3,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addItem } from "../store/cartSlise";
 
-function Pizza({ id,name, imageUrl, price, sizes, types }) {
+type PizzaProps = {
+  id: string;
+  name: string;
+  imageUrl: string;
+  price: number;
+  sizes: number[];
+  types: number[];
+}
+
+const Pizza: React.FC<PizzaProps> = ({ id,name, imageUrl, price, sizes, types })=> {
+  
   const [activeType, setActiveType] = useState<number>(0);
   const [activeSize, setActiveSize] = useState<number>(sizes[0]);
   const cartArr = useSelector((state)=>state.cart.item)//получаем массив пиц из корзины

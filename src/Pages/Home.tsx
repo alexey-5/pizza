@@ -34,6 +34,7 @@ function Home() {
       //.then((res) => res.json())
      // .then((arr) => {
         //setPizzaBaza(arr.data);
+        
         dispatch(fetchPizza({
           sortText,
           sortCategory,
@@ -75,3 +76,4 @@ function Home() {
   );
 }
 export default Home;
+// @ts-ignore  - временная отмена типизации 

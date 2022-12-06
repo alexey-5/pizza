@@ -194,12 +194,10 @@ function Cart() {
         <div className="cart__bottom">
           <div className="cart__bottom-details">
             <span>
-              {" "}
-              Всего пицц: <b>{countTotal} шт.</b>{" "}
+              Всего пицц: <b>{countTotal} шт.</b>
             </span>
             <span>
-              {" "}
-              Сумма заказа: <b>{sum} ₽</b>{" "}
+              Сумма заказа: <b>{sum} ₽</b>
             </span>
           </div>
           <div className="cart__bottom-buttons">

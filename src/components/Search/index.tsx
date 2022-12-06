@@ -6,7 +6,7 @@ import debounce from 'lodash.debounce'
 
 function Search() {
   const [search2, setSearch2] = useState<string>('')
-  const inputRef = useRef();
+  const inputRef = useRef(null);
   const dispatch = useDispatch();
   //const search = useSelector((state)=>state.pizza.search);
   const onClickClear = (()=>{
