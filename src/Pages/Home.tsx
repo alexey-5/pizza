@@ -7,10 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchPizza } from "../store/pizzaSlise";
 
 function Home() {
-  //const { search } = useContext(appContext);
-  //const [pizzaBaza, setPizzaBaza] = useState([]);
- // const [isLoading, setIsLoading] = useState(true);//true - идёт загрузка данных
-  const dispatch = useDispatch();
+   const dispatch = useDispatch();
   //const [sort, setSort] = useState(0);
   //const [categories, setСategories] = useState(0);
   const categories = useSelector((state) => state.sort.categories);
@@ -29,11 +26,6 @@ function Home() {
     //setIsLoading(true);
     const sortCategory = categories !== 0 ? `&category=${categories}` : "";
     const searchFetch = search ? `&search=${search}` : ""; //поиск по бекенду
-      //выбираем sortBy= это сортировка позиций по свойству
-      // &category=${categories} это отбор позиций с определённым значением указанного свойства
-      //.then((res) => res.json())
-     // .then((arr) => {
-        //setPizzaBaza(arr.data);
         
         dispatch(fetchPizza({
           sortText,
