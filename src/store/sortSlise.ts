@@ -1,28 +1,35 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const sortSlise  = createSlice({
+type SinitialSlise = {
+   sort: number;
+   categories: number;
+   popUp: boolean;
+}
+
+const initialState: SinitialSlise = {
+   sort: 0,
+   categories: 0,
+   popUp: false,
+}
+
+const sortSlise = createSlice({
    name: "sort",
-   initialState:{
-     sort: 0,
-     categories: 0,
-     popUp: false,
-   },
-
+   initialState,
    reducers: {
-      setSort(state, action){
-       state.sort = action.payload
+      setSort(state, action: PayloadAction<number>) {
+         state.sort = action.payload
       },
 
-      setPopUp(state, action){
-       state.popUp = action.payload
+      setPopUp(state, action: PayloadAction<boolean>) {
+         state.popUp = action.payload
       },
 
-      setCategories(state, action){
-       state.categories = action.payload
+      setCategories(state, action: PayloadAction<number>) {
+         state.categories = action.payload
       },
    }
 })
 //export const selectSort = (state)=>state.sort.categories
 
-export const{setSort, setCategories, setPopUp} = sortSlise.actions;
+export const { setSort, setCategories, setPopUp } = sortSlise.actions;
 export default sortSlise.reducer;

@@ -30,7 +30,8 @@ const Pizza: React.FC<PizzaProps> = ({ id,name, imageUrl, price, sizes, types })
       imageUrl,
       price,
       sizes: activeSize,
-      types: activeType
+      types: activeType,
+      count: 0,
     }
     dispatch(addItem(pizza))
   }
@@ -67,7 +68,7 @@ const Pizza: React.FC<PizzaProps> = ({ id,name, imageUrl, price, sizes, types })
         </div>
         <div className="pizza-block__bottom">
           <div className="pizza-block__price">от {price} ₽</div>
-          <div className="button button--outline button--add">
+          <div onClick={addPizza} className="button button--outline button--add">
             <svg
               width="12"
               height="12"
@@ -80,7 +81,7 @@ const Pizza: React.FC<PizzaProps> = ({ id,name, imageUrl, price, sizes, types })
                 fill="white"
               />
             </svg>
-            <span onClick={addPizza}>Добавить</span>
+            <span>Добавить</span>
             <i>{countPizza}</i>
           </div>
         </div>

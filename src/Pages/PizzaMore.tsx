@@ -21,7 +21,7 @@ const PizzaMore: React.FC = () => {
         );
        // console.log("Параметр  ",data);
         dispatch(setPizzaMore(data));
-        console.log(data);
+       // console.log(data);
       } catch (err) {
       //  console.log("Ошибка  ", err);
         navig('/');
