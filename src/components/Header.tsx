@@ -1,11 +1,12 @@
 import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
+import { RootState } from "../store";
 import Search from "./Search";
 //import logo from "../img/pizza-logo.svg";
 
 function Header() {
-  const { item, sum } = useSelector((state) => state.cart);
+  const { item, sum } = useSelector((state:RootState) => state.cart);
   const countTotal = item.reduce((akk: number, elem) => elem.count + akk, 0);
   const location = useLocation();
   const render1 = useRef(false);

@@ -5,19 +5,20 @@ import Sort from "../components/Sort";
 import Pizza from "../components/Pizza";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPizza } from "../store/pizzaSlise";
+import { RootState } from "../store";
 
 function Home() {
    const dispatch = useDispatch();
   //const [sort, setSort] = useState(0);
   //const [categories, setСategories] = useState(0);
-  const categories = useSelector((state) => state.sort.categories);
-  const search = useSelector((state)=>state.pizza.search)
+  const categories = useSelector((state:RootState) => state.sort.categories);
+  const search = useSelector((state:RootState)=>state.pizza.search)
 
   //const categories = useSelector (selectSort)
 
-  const sort = useSelector((state) => state.sort.sort);
-  const pizzaBaza = useSelector((state) => state.pizza.items);
-  const isLoading = useSelector((state) => state.pizza.loading);
+  const sort = useSelector((state:RootState) => state.sort.sort);
+  const pizzaBaza = useSelector((state:RootState) => state.pizza.items);
+  const isLoading = useSelector((state:RootState) => state.pizza.loading);
   //console.log('  Данные',pizzaBaza)
   const sortProperty = ["rating", "price", "name"];
   const sortText = sortProperty[sort];

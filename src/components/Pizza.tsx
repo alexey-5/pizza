@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { RootState } from "../store";
 import { addItem } from "../store/cartSlise";
 
 type PizzaProps = {
@@ -16,7 +17,7 @@ const Pizza: React.FC<PizzaProps> = ({ id,name, imageUrl, price, sizes, types })
   
   const [activeType, setActiveType] = useState<number>(0);
   const [activeSize, setActiveSize] = useState<number>(sizes[0]);
-  const cartArr = useSelector((state)=>state.cart.item)//получаем массив пиц из корзины
+  const cartArr = useSelector((state:RootState)=>state.cart.item)//получаем массив пиц из корзины
   let countPizza = 0;
     const objPizza=cartArr.find((elem)=>elem.id===id);//ищем объект с этой пицей
       if(objPizza)countPizza = objPizza.count//если он есть, считываем количество

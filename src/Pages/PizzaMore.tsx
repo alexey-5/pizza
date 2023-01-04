@@ -3,13 +3,15 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setPizzaMore } from "../store/pizzaSlise";
+import { RootState } from "../store";
 
 const PizzaMore: React.FC = () => {
   //const [pizza,setPizza] = useState();
   const { id } = useParams();
   const navig = useNavigate();
   const dispatch = useDispatch();
-  const pizza = useSelector((state)=>state.pizza.pizzaMore)
+  const pizza = useSelector((state:RootState)=>state.pizza.pizzaMore);
+  
   // console.log("Параметр  ",id);
   useEffect(() => {
     async function fetchPizza() {
@@ -19,6 +21,7 @@ const PizzaMore: React.FC = () => {
         );
        // console.log("Параметр  ",data);
         dispatch(setPizzaMore(data));
+        console.log(data);
       } catch (err) {
       //  console.log("Ошибка  ", err);
         navig('/');
@@ -27,13 +30,14 @@ const PizzaMore: React.FC = () => {
     fetchPizza();
   }, []);
   
-  if (!pizza) return <>  " Загрузка...."</>
+  if (!pizza[0]) return <>  " Загрузка...."</>
+  const {imageUrl, name, price} = pizza[0];
   return (
     <div className="container">
-      <img className="pizzamore_img" src={pizza.imageUrl} alt="img"></img>
+      <img className="pizzamore_img" src={imageUrl} alt="img"></img>
       <h1 >Pizza</h1>
-      <p>{pizza.name}</p>
-      <h4>{pizza.price}</h4>
+      <p>{name}</p>
+      <h4>{price}</h4>
     </div>
   );
 };

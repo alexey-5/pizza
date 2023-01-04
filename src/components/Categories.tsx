@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../store";
 import {setCategories} from '../store/sortSlise'
 
 function Categories() {
   const dispatch = useDispatch();
-  const categories = useSelector((state)=>state.sort.categories)
+  const categories = useSelector((state:RootState)=>state.sort.categories)
 
    const arr=['Все','Мясные','Вегетарианская','Гриль','Острые','Закрытые']
   return (

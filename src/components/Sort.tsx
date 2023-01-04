@@ -1,11 +1,12 @@
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../store";
 import { setPopUp, setSort } from "../store/sortSlise";
 
 function Sort() {
   const dispatch = useDispatch();
-  const sort = useSelector((state) => state.sort.sort);
-  const popup = useSelector((state) => state.sort.popUp);
+  const sort = useSelector((state:RootState) => state.sort.sort);
+  const popup = useSelector((state:RootState) => state.sort.popUp);
 
   const sortArr: string[] = ["популярности", "цене", "алфавиту"];
   const sortRef = useRef<HTMLDivElement>(null);
